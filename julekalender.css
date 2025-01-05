@@ -1,0 +1,199 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(/Photo/photo2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+.mainframe{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+.header{
+    width: 100%;
+    height: 5%;
+    padding-top: 20px;
+    margin-left: 300px;
+    text-align:center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    color: rgb(231, 41, 41); 
+}
+.maincontent{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    width: 100%;
+}
+.calendar{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 10px;
+    width: 60%;
+    height: 60%;
+}
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    height: 100px;
+    width: 150px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+.box:nth-child(1n) {background-color: red;}
+.box:nth-child(2n) {background-color: green;}
+.box:nth-child(3n) {background-color: yellow;}
+.box:nth-child(4n) {background-color: blue;}
+
+.box::before, 
+.box::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+}
+.box::before{
+    width: 20%;
+    height: 100%;
+    left: 40%;
+}
+.box::after{
+    width: 100%;
+    height: 20%;
+    top: 40%;
+}
+.box:hover{
+    animation: shake 0.5s ease-in-out infinite;
+}
+.boxnumber {
+    position: absolute;
+    z-index: 2;
+    top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    border-radius: 5px;
+}
+.empty {
+    width: 60%;
+}
+.reset {
+    width: 20%;
+}
+.sound {
+    text-align: end;
+    padding-right: 20px;
+    width: 20%;
+}
+
+.popupbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup{
+    width: 800px;
+    height: 800px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+.boxnumberdiv{
+    padding: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.popupcontent{
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    margin-top: 200px;
+    padding: 20px;
+    word-wrap:break-word;
+}
+.popupcontent2{
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+    text-align: center;
+}
+.popupclose{
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.pupupclose:hover{
+    background: darkred;
+};
+.triviaquestion{
+    margin-bottom: 10px;
+}
+.triviabutton{
+    margin: 10px;
+}
+
+.box.closed{
+    background-color: gray;
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+.box.closed::before,
+.box.closed::after{
+    display: none;
+}
+
+@keyframes shake {
+    0%{transform: translate(0,0);}
+    25%{transform: translate(-5px,-5px);}
+    50%{transform: translate(5px, 5px);}
+    75%{transform: translate(-5x,5px);}
+    100%{transform: translate(0,0);}
+}
+
