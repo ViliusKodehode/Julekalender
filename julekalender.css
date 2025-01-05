@@ -25,6 +25,9 @@ body{
     font-size: 4rem;
     color: rgb(231, 41, 41); 
 }
+.header.textcontet{
+    animation: glow 2s infinite;
+}
 .maincontent{
     display: flex;
     flex-direction: row;
@@ -166,9 +169,6 @@ body{
     border-radius: 5px;
     margin-top: 10px;
 }
-.pupupclose:hover{
-    background: darkred;
-};
 .triviaquestion{
     margin-bottom: 10px;
 }
@@ -188,12 +188,47 @@ body{
 .box.closed::after{
     display: none;
 }
-
+.resetbutton{
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 0 10px rgb(255, 75, 43, 0.9);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: glow 2s infinite;
+}
+.resetbutton:hover{
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3), 0 0 15px rgb(255, 75, 43, 0.9);
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+.resetbutton:active{
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 8px rgba(255, 75, 43, 0.5);
+}
 @keyframes shake {
     0%{transform: translate(0,0);}
     25%{transform: translate(-5px,-5px);}
     50%{transform: translate(5px, 5px);}
     75%{transform: translate(-5x,5px);}
     100%{transform: translate(0,0);}
+}
+@keyframes glow {
+    0%, 100%{
+        box-shadow: 0 0 10px rgba(255,75,43,0.5);
+    }
+    50%{
+        box-shadow: 0 0 20px rgba(255, 75, 43, 1);
+    }
 }
 
